@@ -8,7 +8,17 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "shadcn-nuxt",
     "@vueuse/nuxt",
+    "@pinia/nuxt",
   ],
+  fonts: {
+    families: [
+      {
+        name: 'Poppins',
+        provider: 'google',
+        weights: [300, 400, 500, 600, 700],
+      }
+    ]
+  },
   shadcn: {
     /**
      * Prefix for all the imported component.
