@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { motion } from "motion-v";
-import Autoplay from 'embla-carousel-autoplay'
-const videoId = "LYCFeMrP_JA";
+import Autoplay from "embla-carousel-autoplay";
+const videoId = "zeTlSc_gckA";
 
 const steps = [
   {
@@ -51,6 +51,66 @@ const alternatifTradisional = [
     image: "assets/img/miana.avif",
   },
 ];
+
+const obatTBC = [
+  {
+    medicine: "Isoniazid",
+    deskripsi:
+      "Isoniazid merupakan obat utama untuk membunuh bakteri Mycobacterium tuberculosis dengan cara menghambat pembentukan dinding sel bakteri. Pada orang dewasa dosis yang dianjurkan adalah 5 mg/kgBB per hari dengan dosis maksimum 300 mg, atau 10 mg/kgBB jika diberikan 3 kali per minggu. Pada lansia dosis umumnya sama, namun perlu pemantauan fungsi hati karena risiko efek samping lebih tinggi.",
+    efek_samping: {
+      nama: "Kesemutan",
+      img : "assets/img/kesemutan.jpeg",
+      penjelasan: "Isoniazid dapat menyebabkan kesemutan pada tangan atau kaki. Pencegahan dapat dilakukan dengan konsumsi vitamin B6 yang dapat diperoleh dari pisang, ayam, ikan, kentang, dan kacang-kacangan, atau suplemen sesuai anjuran tenaga kesehatan.",
+    },
+    img: "assets/img/isoniazid.jpeg",
+  },
+  {
+    medicine: "Rifampisin",
+    deskripsi:
+      "Rifampisin bekerja dengan menghambat pembentukan RNA bakteri sehingga pertumbuhan bakteri TB dapat dihentikan. Dosis pada orang dewasa adalah 10 mg/kgBB per hari dengan dosis maksimum 600 mg. Pada lansia dosis biasanya tetap sama, tetapi perlu pengawasan karena dapat memengaruhi fungsi hati dan berinteraksi dengan obat lain.",
+    efek_samping: {
+      nama: "Perubahan Warna Urin",
+      img : "assets/img/kencingoranye.jpeg",
+      penjelasan: "Rifampisin dapat membuat urin, keringat, atau air mata berwarna merah-oranye. Kondisi ini normal dan tidak berbahaya sehingga tidak memerlukan pengobatan khusus.",
+    },
+    img: "assets/img/rifampisin.jpeg",
+  },
+  {
+    medicine: "Pirazinamid",
+    deskripsi:
+      "Pirazinamid membantu membunuh bakteri TB yang berada di lingkungan asam di dalam sel tubuh sehingga mempercepat proses pengobatan. Dosis pada orang dewasa adalah 25 mg/kgBB per hari, atau sekitar 35 mg/kgBB jika diberikan 3 kali per minggu. Pada lansia penggunaan tetap dapat dilakukan, namun perlu pemantauan karena dapat meningkatkan kadar asam urat dan memengaruhi fungsi hati.",
+    efek_samping: {
+      nama: "Nyeri Sendi",
+      img : "assets/img/nyerisendi.jpg",
+      penjelasan: "Pirazinamid dapat meningkatkan kadar asam urat dan menyebabkan nyeri sendi. Keluhan dapat dikurangi dengan banyak minum air putih, kompres hangat, dan obat sesuai anjuran dokter.",
+    },
+    img: "assets/img/pirazinamid.jpeg",
+  },
+  {
+    medicine: "Ethambutol",
+    deskripsi:
+      "Ethambutol digunakan untuk menghambat pertumbuhan bakteri TB dan mencegah terjadinya resistensi obat. Dosis yang dianjurkan pada orang dewasa adalah 15 mg/kgBB per hari, atau sekitar 30 mg/kgBB jika diberikan 3 kali per minggu. Pada lansia dosis biasanya sama, tetapi perlu pemantauan penglihatan karena dapat menimbulkan gangguan saraf optik.",
+    efek_samping: {
+      nama: "Mual dan Muntah",
+      img : "assets/img/mual.jpeg",
+      penjelasan: "Obat OAT dapat menyebabkan mual atau nyeri lambung. Untuk mengurangi keluhan, pasien dapat makan makanan ringan sebelum minum obat dan makan dalam porsi kecil tetapi lebih sering.",
+    },
+    img: "assets/img/ethambutol.jpeg",
+  },
+];
+
+const open = ref(false);
+const form = ref<any>({});
+
+const toggleDialog = (toggle: boolean, item: any) => {
+  form.value = {};
+  if (toggle) {
+    form.value = item;
+    open.value = true;
+  } else {
+    open.value = false;
+  }
+};
 </script>
 
 <template>
@@ -69,6 +129,34 @@ const alternatifTradisional = [
         </div>
       </div>
 
+      <div class="max-w-7xl mx-auto p-5 mt-10">
+        <motion.h1 :initial="{ opacity: 0, y: 20 }" :while-in-view="{ opacity: 1, y: 0, transition: { duration: 0.3 } }" class="md:text-4xl text-2xl font-bold text-cyan-700 mx-auto mb-4 text-center">Alternatif Tradisional<br />Pendamping Pengobatan</motion.h1>
+        <div class="md:py-10">
+          <Carousel
+            class="w-10/12 max-w-4xl mx-auto"
+            :opts="{ align: 'start', loop: true }"
+            :plugins="[
+              Autoplay({
+                delay: 3000,
+                stopOnInteraction: false,
+              }),
+            ]"
+          >
+            <CarouselContent class="-ml-1">
+              <CarouselItem v-for="item in obatTBC" :key="item.medicine" class="pl-1 md:basis-1/3 basis-1/2">
+                <div class="text-center space-y-2 text-cyan-700 p-4 border rounded-md">
+                  <img :src="item.img" :alt="item.medicine" class="w-full h-40 object-cover" />
+                  <Button variant="outline" size="sm" @click="toggleDialog(true, item)">
+                    <h1>{{ item.medicine }}</h1></Button
+                  >
+                </div>
+              </CarouselItem>
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
+      </div>
       <div class="max-w-7xl mx-auto p-5 mt-10">
         <motion.h1 :initial="{ opacity: 0, y: 20 }" :while-in-view="{ opacity: 1, y: 0, transition: { duration: 0.3 } }" class="md:text-4xl text-2xl font-bold text-cyan-700 mx-auto mb-4 text-center">Panduan Pengobatan</motion.h1>
         <div class="md:py-10">
@@ -95,14 +183,15 @@ const alternatifTradisional = [
         </div>
       </div>
       <div class="max-w-7xl mx-auto p-5 mt-10">
-        <motion.h1 :initial="{ opacity: 0, y: 20 }" :while-in-view="{ opacity: 1, y: 0, transition: { duration: 0.3 } }" class="md:text-4xl text-2xl font-bold text-cyan-700 mx-auto mb-4 text-center">Panduan Pengobatan</motion.h1>
+        <motion.h1 :initial="{ opacity: 0, y: 20 }" :while-in-view="{ opacity: 1, y: 0, transition: { duration: 0.3 } }" class="md:text-4xl text-2xl font-bold text-cyan-700 mx-auto mb-4 text-center">Alternatif Tradisional<br />Pendamping Pengobatan</motion.h1>
         <div class="md:py-10">
           <Carousel
-            class="w-full max-w-2xl mx-auto"
+            class="w-10/12 max-w-2xl mx-auto"
             :opts="{ align: 'start', loop: true }"
             :plugins="[
               Autoplay({
                 delay: 2000,
+                stopOnInteraction: false,
               }),
             ]"
           >
@@ -127,12 +216,39 @@ const alternatifTradisional = [
                 </div>
               </CarouselItem>
             </CarouselContent>
-
-            <CarouselPrevious />
-            <CarouselNext />
           </Carousel>
         </div>
       </div>
     </div>
+    <Dialog v-model:open="open">
+      <DialogContent class="!max-w-2xl">
+        <DialogHeader>
+          <DialogTitle>{{ form?.medicine }}</DialogTitle>
+          <DialogDescription> Berikut informasi mengenai obat {{ form?.medicine }}</DialogDescription>
+        </DialogHeader>
+        <div class="p-4 space-y-4">
+          <div class="flex">
+            <img :src="form?.img" :alt="form?.medicine" class="w-48 h-48 object-cover" />
+            <div>
+              <h1 class="font-semibold text-cyan-700">Deskripsi</h1>
+              <p class="text-sm ">{{ form?.deskripsi }}</p>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <div>
+              <h1 class="font-semibold text-cyan-700">Efek Samping ({{ form?.efek_samping?.nama }})</h1>
+              <p class="text-sm">{{ form?.efek_samping?.penjelasan }}</p>
+            </div>
+            <img :src="form?.efek_samping?.img" :alt="form?.medicine" class="w-48 h-48 object-cover" />
+          </div>
+        </div>
+        <DialogFooter>
+          <DialogClose as-child>
+            <Button variant="outline"> Tutup </Button>
+          </DialogClose>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
   </ClientOnly>
 </template>

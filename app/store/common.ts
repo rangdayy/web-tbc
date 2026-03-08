@@ -31,10 +31,20 @@ export const useCommonStore = defineStore("common", () => {
 
   const toSection = (id: string) => {
     activeSection.value = id;
-
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+    const currentRoute = useRoute().path;
+    if (currentRoute !== "/") {
+      navigateTo("/");
+      setTimeout(() => {
+        const section = document.getElementById(id);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 1000);
+    } else {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 

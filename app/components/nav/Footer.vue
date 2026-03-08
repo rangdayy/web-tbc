@@ -19,14 +19,14 @@
         <div class="space-y-2">
           <div class="font-bold flex gap-2 items-center">
             <motion.img :while-hover="{ scale: 1.1, rotate: 20 }" :transition="{ duration: 0.5, ease: 'easeInOut' }" src="/assets/img/tbclogo.png" class="h-12"> </motion.img>
-            <motion.div class="flex flex-col leading-none text-sm">
+            <motion.div class="flex text-sm gap-1 text-cyan-700">
               <span>Tuntas</span>
               <span>Lawan</span>
               <span>TBC</span>
             </motion.div>
           </div>
           <div>
-            <p class="text-xs max-w-xs text-stone-600 ">
+            <p class=" max-w-xs text-sm">
               Tuberkulosis (TBC) masih menjadi salah satu penyakit menular yang banyak ditemukan di Indonesia. Meningkatkan kesadaran masyarakat sangat penting agar penularan bisa dicegah dan penderita bisa segera mendapatkan pengobatan.
             </p>
           </div>

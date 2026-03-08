@@ -1,11 +1,9 @@
 <template>
   <div>
-    <Navbar />
     <Firstsection />
     <Secondsection />
     <Thirdsection />
     <Fourthsection />
-    <Footer />
   </div>
 </template>
 
@@ -14,8 +12,6 @@ import Firstsection from "~/components/home/firstsection.vue";
 import Fourthsection from "~/components/home/fourthsection.vue";
 import Secondsection from "~/components/home/secondsection.vue";
 import Thirdsection from "~/components/home/thirdsection.vue";
-import Footer from "~/components/nav/Footer.vue";
-import Navbar from "~/components/nav/Navbar.vue";
 
 definePageMeta({
   layout: "default",
