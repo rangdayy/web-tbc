@@ -112,9 +112,9 @@ const diagnosaTBC = () => {
           </RadioGroup>
         </div>
       </motion.div>
-      <div class="mt-4 text-center">
+      <motion.div class="mt-4 text-center" :initial="{ opacity: 0, y: 20 }" :while-in-view="{ opacity: 1, y: 0, transition: { duration: 0.3 } }">
         <Button class="bg-cyan-700 mx-auto" @click="diagnosaTBC"> Lanjutkan</Button>
-      </div>
+      </motion.div>
     </div>
   </div>
 </template>
