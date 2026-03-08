@@ -8,6 +8,8 @@ export default withNuxt(
       //any
 
       "@typescript-eslint/no-explicit-any": "off",
+      "vue/no-v-text-v-html-on-component" : "off",
+      
     },
   },
 );
