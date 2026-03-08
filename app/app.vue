@@ -1,6 +1,6 @@
 <template>
   <section>
-    <Toaster />
+    <Toaster :position="'top-center'" />
     <nuxt-layout>
       <NuxtPage />
     </nuxt-layout>
