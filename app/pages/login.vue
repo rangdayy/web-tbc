@@ -24,7 +24,7 @@
             <p class="text-stone-500">Masukkan username dan password anda untuk mengakses halaman</p>
             <Input type="text" placeholder="Username"></Input>
             <Input type="password" placeholder="Password"></Input>
-            <Button class="w-full mt-4" @click="onLogin" :disabled="isLoading">
+            <Button class="w-full mt-4 bg-cyan-700" @click="onLogin" :disabled="isLoading">
               <Loader2 v-if="isLoading" class="w-4 h-4 animate-spin" />
               Login</Button
             >

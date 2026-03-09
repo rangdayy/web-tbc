@@ -2,22 +2,15 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  modules: [
-    "@nuxt/eslint",
-    "@nuxt/fonts",
-    "@nuxtjs/tailwindcss",
-    "shadcn-nuxt",
-    "@vueuse/nuxt",
-    "@pinia/nuxt",
-  ],
+  modules: ["@nuxt/eslint", "@nuxt/fonts", "@nuxtjs/tailwindcss", "shadcn-nuxt", "@vueuse/nuxt", "@pinia/nuxt", "nuxt-charts"],
   fonts: {
     families: [
       {
-        name: 'Poppins',
-        provider: 'google',
+        name: "Poppins",
+        provider: "google",
         weights: [300, 400, 500, 600, 700],
-      }
-    ]
+      },
+    ],
   },
   shadcn: {
     /**
