@@ -57,6 +57,7 @@ const onLogin = () => {
   toast.success("Login Success", {
     description: "Anda telah berhasil login. Selamat datang!",
   });
+  navigateTo("/home");
 };
 
 const isLoading = ref(false);
