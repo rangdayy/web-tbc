@@ -81,7 +81,7 @@ const obatTBC = [
       "Pirazinamid membantu membunuh bakteri TB yang berada di lingkungan asam di dalam sel tubuh sehingga mempercepat proses pengobatan. Dosis pada orang dewasa adalah 25 mg/kgBB per hari, atau sekitar 35 mg/kgBB jika diberikan 3 kali per minggu. Pada lansia penggunaan tetap dapat dilakukan, namun perlu pemantauan karena dapat meningkatkan kadar asam urat dan memengaruhi fungsi hati.",
     efek_samping: {
       nama: "Nyeri Sendi",
-      img : "assets/img/nyerisendi.jpg",
+      img : "assets/img/nyerisendi.jpeg",
       penjelasan: "Pirazinamid dapat meningkatkan kadar asam urat dan menyebabkan nyeri sendi. Keluhan dapat dikurangi dengan banyak minum air putih, kompres hangat, dan obat sesuai anjuran dokter.",
     },
     img: "assets/img/pirazinamid.jpeg",
