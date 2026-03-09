@@ -49,8 +49,8 @@ const faqTBC = [
 </script>
 
 <template>
-  <div class="py-20 px-5 space-y-15">
-    <div id="faq" class="max-w-7xl mx-auto">
+  <div id="faq"  class="py-20 px-5 space-y-15">
+    <div class="max-w-7xl mx-auto">
       <motion.h1 :initial="{ opacity: 0, y: 20 }" :while-in-view="{ opacity: 1, y: 0, transition: { duration: 0.3 } }" class="md:text-4xl text-2xl font-bold text-cyan-700 mx-auto mb-4">Pertanyaan yang Sering Diajukan</motion.h1>
       <motion.p :initial="{ opacity: 0, y: 20 }" :while-in-view="{ opacity: 1, y: 0, transition: { duration: 0.3 } }" class="text-cyan-700">Temukan jawaban atas pertanyaanmu di sini </motion.p>
       <motion.div :initial="{ opacity: 0, y: 20 }" :while-in-view="{ opacity: 1, y: 0, transition: { duration: 0.3 } }" div class="mt-4">

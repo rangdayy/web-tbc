@@ -14,7 +14,7 @@
           <NavigationMenuList>
             <NavigationMenuItem v-for="item in components" :key="item.name">
               <NavigationMenuLink :class="navigationMenuTriggerStyle()" as-child>
-                <NuxtLink :class="{ 'cursor-pointer uppercase hover:text-cyan-700 font-normal': true, 'text-cyan-700 underline-offset-8 underline font-semibold!': activeSection == item.id }" @click="toSection(item.id, item.path)"> {{ item.name }} </NuxtLink>
+                <NuxtLink :class="{ 'cursor-pointer uppercase hover:text-cyan-700 font-normal': true, 'text-cyan-700 underline-offset-8 underline font-semibold!': activeSection == item.id || currentRoute.path == item.path }" @click="toSection(item.id, item.path)"> {{ item.name }} </NuxtLink>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
@@ -53,6 +53,7 @@ import { LogIn, MenuIcon } from "lucide-vue-next";
 import { useCommonStore } from "~/store/common";
 
 const useStore = useCommonStore();
+const currentRoute = computed(()=> useRouter().currentRoute.value);
 const activeSection = computed({
   get: () => useStore.activeSection,
   set: (value) => useStore.setActiveSection(value),

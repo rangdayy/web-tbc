@@ -32,7 +32,7 @@
           </div>
         </div>
         <div class="flex gap-2 flex-col font-semibold text-sm">
-          <a href="#" @click="toSection(menu.id)" v-for="menu in components" :key="menu.name">
+          <a href="#" @click="toSection(menu.id,menu.path)" v-for="menu in components" :key="menu.name">
             {{ menu.name }}
           </a>
         </div>
@@ -86,16 +86,7 @@ import { useCommonStore } from "~/store/common";
 const useStore = useCommonStore();
 
 const components = computed(() => useStore.components);
-const { toSection } = useStore;
+const { toSection,contacts } = useStore;
 
-const contacts = {
-  phone: "08123456789",
-  email: "example@example.com",
-  address: "Jl. No. 123, Makassar, Sulawesi Selatan",
-  facebook: "https://www.facebook.com/",
-  whatsapp: "https://wa.me/6285757840673",
-  instagram: "https://www.instagram.com/",
-  twitter: "https://www.twitter.com/",
-  youtube: "https://www.youtube.com/",
-};
+
 </script>
