@@ -26,7 +26,7 @@ const dataKejadian = [
   <ClientOnly>
     <div id="seputar" class="bg-cyan-50">
       <div class="max-w-7xl mx-auto p-5 pb-20">
-        <motion.h1 :initial="{ opacity: 0, y: 20 }" :while-in-view="{ opacity: 1, y: 0, transition: { duration: 0.3 } }" class="md:text-5xl text-2xl font-bold text-cyan-700 mx-auto min-h-screen flex flex-col text-center justify-center"><span>Kenali & Deteksi Segara Kondisi Anda </span></motion.h1>
+        <motion.h1 :initial="{ opacity: 0, y: 20 }" :while-in-view="{ opacity: 1, y: 0, transition: { duration: 0.3 } }" class="md:text-5xl text-2xl font-bold text-cyan-700 mx-auto min-h-screen flex flex-col text-center justify-center"><span>Kenali & Deteksi Segera Kondisi Anda </span></motion.h1>
 
         <div class="grid grid-cols-3 md:gap-10 gap-4">
           <motion.h1 :initial="{ opacity: 0, y: 20 }" :while-in-view="{ opacity: 1, y: 0, transition: { duration: 0.3 } }" class="md:text-5xl text-2xl font-bold text-cyan-700 mx-auto pt-15 text-center col-span-3">Angka Kejadian TBC</motion.h1>

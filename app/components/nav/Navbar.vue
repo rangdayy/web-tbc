@@ -14,11 +14,11 @@
           <NavigationMenuList>
             <NavigationMenuItem v-for="item in components" :key="item.name">
               <NavigationMenuLink :class="navigationMenuTriggerStyle()" as-child>
-                <NuxtLink :class="{ 'cursor-pointer uppercase hover:text-cyan-700 font-normal': true, 'text-cyan-700 underline-offset-8 underline font-semibold!': activeSection == item.id }" @click="toSection(item.id)"> {{ item.name }} </NuxtLink>
+                <NuxtLink :class="{ 'cursor-pointer uppercase hover:text-cyan-700 font-normal': true, 'text-cyan-700 underline-offset-8 underline font-semibold!': activeSection == item.id }" @click="toSection(item.id, item.path)"> {{ item.name }} </NuxtLink>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NuxtLink to="/login">
+              <NuxtLink @click="toSection('', '/login')">
                 <Button variant="outline" class="w-full text-cyan-700 cursor-pointer hover:text-cyan-700">
                   <LogIn></LogIn>
                   LOGIN</Button
@@ -36,7 +36,7 @@
           <DropdownMenuContent class="w-56" align="start">
             <DropdownMenuLabel>MENU</DropdownMenuLabel>
             <DropdownMenuItem v-for="item in components" :key="item.name">
-              <NuxtLink :class="{ 'cursor-pointer uppercase hover:text-cyan-700 font-normal': true, 'text-cyan-700 underline-offset-8 underline font-semibold!': activeSection == item.id }" @click="toSection(item.id)"> {{ item.name }} </NuxtLink>
+              <NuxtLink :class="{ 'cursor-pointer uppercase hover:text-cyan-700 font-normal': true, 'text-cyan-700 underline-offset-8 underline font-semibold!': activeSection == item.id }" @click="toSection(item.id, item.path)"> {{ item.name }} </NuxtLink>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
